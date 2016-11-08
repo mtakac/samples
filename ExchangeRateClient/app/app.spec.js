@@ -13,6 +13,6 @@ describe('App component', ( ) => {
     renderer.render(<App />);
     const actual = renderer.getRenderOutput().props.className;
     const expected = 'app';
-    expect(actual).toEqual(expected);
+    expect(actual).toInclude(expected);
   });
 });

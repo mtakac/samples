@@ -2,6 +2,7 @@ import { endpoint, interval } from './config';
 import startRatePolling from './startRatePolling';
 import React, {Component} from 'react';
 
+import Navbar from './navbar';
 import Rates from './rates';
 
 const rates = {
@@ -18,8 +19,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1>Currency rates</h1>
-        <Rates rates={rates['rates']} />
+        <Navbar title="Random Ticker" />
+
+        <div className="container">
+          <h1>Currency rates</h1>
+          <Rates rates={rates['rates']} />
+        </div>
       </div>
     );
   }

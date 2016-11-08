@@ -13,6 +13,6 @@ describe('Rates component', ( ) => {
     renderer.render(<Rates rates={{}} />);
     const actual = renderer.getRenderOutput().props.className;
     const expected = 'rates';
-    expect(actual).toEqual(expected);
+    expect(actual).toInclude(expected);
   });
 });
