@@ -5,7 +5,7 @@ var webpackConfig = {
         new webpack.NoErrorsPlugin(),
     ],
     entry: {
-        app: './app/app.js',
+        app: './app/main.js',
     },
     output: {
         filename: '[name].js',

@@ -15,7 +15,7 @@
   "babel": {
     "presets": [
       "es2015",
-      "stage-1"
+      "react"
     ]
   },
   "dependencies": {
@@ -26,7 +26,12 @@
     "express": "4.14.0",
     "json-loader": "0.5.4",
     "json-server": "0.8.17",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.16.0"
   }
 }

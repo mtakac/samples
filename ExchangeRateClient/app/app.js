@@ -1,7 +1,15 @@
 import { endpoint, interval } from './config';
 import startRatePolling from './startRatePolling';
 
-export function run() {
-    console.log('App is running.');
-    startRatePolling(endpoint, interval);
+import React, {Component} from 'react';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="app">Welcome</div>
+    );
+  }
 }
+
+export default App;
+
