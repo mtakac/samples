@@ -4,15 +4,15 @@ import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 
-import App from './app';
+import Rates from './rates';
 
-describe('App component', ( ) => {
+describe('Rates component', ( ) => {
 
   it('should render', () => {
     const renderer = TestUtils.createRenderer();
-    renderer.render(<App />);
+    renderer.render(<Rates rates={{}} />);
     const actual = renderer.getRenderOutput().props.className;
-    const expected = 'app';
+    const expected = 'rates';
     expect(actual).toEqual(expected);
   });
 });
