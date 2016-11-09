@@ -45,8 +45,10 @@ class App extends Component {
         <Navbar title="Random Ticker" />
 
         <div className="container">
-          <h1>Currency rates</h1>
-          <Rates rates={this.state.rates} />
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <h1>Currency rates</h1>
+            <Rates rates={this.state.rates} />
+          </div>
         </div>
       </div>
     );

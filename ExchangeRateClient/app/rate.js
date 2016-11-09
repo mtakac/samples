@@ -2,9 +2,10 @@ import React from 'react';
 
 const Rate = (props) => {
   return (
-    <div className="rate">
-      {props.currencies} - {Number(props.rate).toFixed(3)}
-    </div>
+    <tr className="rate">
+      <td>{props.currencies}</td>
+      <td>{Number(props.rate).toFixed(3)}</td>
+    </tr>
   );
 }
 

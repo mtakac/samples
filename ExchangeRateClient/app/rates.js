@@ -4,7 +4,11 @@ import Rate from './rate';
 
 const Rates = (props) => {
   return (
-    <div className="rates">{renderRates(props.rates)}</div>
+    <table className="table table-striped table-hover rates">
+      <tbody>
+        {renderRates(props.rates)}
+      </tbody>  
+    </table>
   );
 };
 
