@@ -6,10 +6,15 @@ expect.extend(expectJSX);
 
 import Navbar from './navbar';
 
+let renderer;
+
 describe('Navbar component', ( ) => {
+  
+  beforeEach(() => {
+    renderer = TestUtils.createRenderer();
+  });
 
   it('should render', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Navbar title="" />);
     const actual = renderer.getRenderOutput().props.className;
     const expected = 'navbar';
@@ -17,7 +22,6 @@ describe('Navbar component', ( ) => {
   });
 
   it('should render correct title', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Navbar title="tralala" />);
     const actual = renderer.getRenderOutput();
     const expected = 'tralala';

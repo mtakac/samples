@@ -6,10 +6,15 @@ expect.extend(expectJSX);
 
 import Rate from './rate';
 
+let renderer;
+
 describe('Rate component', () => {
 
+  beforeEach(() => {
+    renderer = TestUtils.createRenderer();
+  });
+
   it('should render', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rate />);
     const actual = renderer.getRenderOutput().props.className;
     const expected = 'rate';
@@ -17,14 +22,12 @@ describe('Rate component', () => {
   });
 
   it('should render passed props correctly', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rate currencies="EUR/USD" rate={1.234} />);
     const actual = renderer.getRenderOutput()
     expect(actual).toIncludeJSX(<td>EUR/USD</td>);
   });
 
   it('should format the rate to 3 decimal points', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rate currencies="EUR/USD" rate={1} />);
     const actual = renderer.getRenderOutput()
     expect(actual).toIncludeJSX(<td>1.000</td>);

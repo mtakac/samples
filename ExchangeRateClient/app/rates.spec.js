@@ -6,10 +6,15 @@ expect.extend(expectJSX);
 
 import Rates from './rates';
 
+let renderer;
+
 describe('Rates component', () => {
 
+  beforeEach(() => {
+    renderer = TestUtils.createRenderer();
+  });
+
   it('should render', () => {
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rates rates={{}} />);
     const actual = renderer.getRenderOutput().props.className;
     const expected = 'rates';
@@ -18,7 +23,6 @@ describe('Rates component', () => {
 
   it('should render rate component for every rate', () => {
     const rates = {'EUR/USD': 0.761, 'GBP/USD': 1.211};
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rates rates={rates} />);
     const actual = renderer.getRenderOutput();
     expect(actual).toIncludeJSX('EUR/USD');
@@ -27,7 +31,6 @@ describe('Rates component', () => {
 
   it('should pass correct props to rate component', () => {
     const rates = {'EUR/USD': 0.761};
-    const renderer = TestUtils.createRenderer();
     renderer.render(<Rates rates={rates} />);
     const actual = renderer.getRenderOutput();
     expect(actual).toIncludeJSX('EUR/USD');
