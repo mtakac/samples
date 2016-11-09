@@ -27,6 +27,7 @@
     "express": "4.14.0",
     "json-loader": "0.5.4",
     "json-server": "0.8.17",
+    "jsonp": "^0.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "webpack": "1.13.1",
